@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <style>
+            @import "static/index/css/index.css";
+        </style>
+        <title>Resume site by Kostikov Eugene</title>
+    </head>
+    <body>
+        <div class="bodyContent">
+            <h2 th:text="#{greeting.header}"></h2>
+            <p th:text="#{greeting.p1}"></p>
+            <p th:text="#{greeting.p2}"></p>
+            <hr/>
+            <h2 th:text="#{bio.header}"></h2>
+            <p th:text="#{bio.p1}"></p>
+            <p th:text="#{bio.p2}"></p>
+            <p th:text="#{bio.p3}"></p>
+            <hr/>
+            <h2 th:text="#{stack.header}"></h2>
+            <dl>
+                <dt>Java 8:</dt>
+                <dd>
+                    <ul>
+                        <li>Core</li>
+                        <li>Collections</li>
+                        <li>Streams</li>
+                        <li>Multithreading</li>
+                    </ul>
+                </dd>
+                <dt>SQL</dt>
+                <dt>Hibernate framework for ORM;</dt>
+                <dt>Spring framework with embedded Tomcat HTTP server:</dt>
+                <dd>
+                    <ul>
+                        <li>Core</li>
+                        <li>Security</li>
+                        <li>MVC</li>
+                        <li>ORM</li>
+                    </ul>
+                </dd>
+            </dl>
+            <th:block th:text="#{stack.t1}"></th:block>
+            <dl>
+                <dt>Java Swing</dt>
+                <dt>HTML/CSS/JS/JQuery</dt>
+                <dt>Git VCS</dt>
+                <dt>Maven</dt>
+            </dl>
+            <hr/>
+            <h2 th:text="#{contacts.header}"></h2>
+            <div class="contactsContainer">
+                <div class="emptySpaceBlock"></div>
+
+                <div class="contactContainer">
+                    <div class="imageContainer">
+                        <img src="static/index/images/gitHubImage.png" alt="Go to my Git hub">
+                    </div>
+                    <div class="textContainer">
+                        <a href="https://github.com/Latterfall">GitHub</a>
+                    </div>
+                </div>
+
+                <div class="emptySpaceBlock"></div>
+
+                <div class="contactContainer">
+                    <div class="imageContainer">
+                        <img src="static/index/images/hhImage.png" alt="Got to my HH">
+                    </div>
+                    <div class="textContainer">
+                        <a href="https://spb.hh.ru/resume/5836437bff07776e360039ed1f4a4d744b704d">HH profile</a>
+                    </div>
+                </div>
+
+                <div class="emptySpaceBlock"></div>
+
+                <div class="contactContainer">
+                    <div class="imageContainer">
+                        <img src="static/index/images/gmailImage.png" alt="Send me email">
+                    </div>
+                    <div class="textContainer">
+                        <a href="mailto:Latterfall@gmail.com">Email</a>
+                    </div>
+                </div>
+
+                <div class="emptySpaceBlock"></div>
+            </div>
+        </div>
+    </body>
+</html>
