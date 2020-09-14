@@ -4,14 +4,25 @@
       xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="static/index/js/index.js"></script>
         <style>
             @import "static/index/css/index.css";
         </style>
+        <link rel="icon" type="image/ico" href="static/index/images/favicon-32x32.png">
         <title>Resume site by Kostikov Eugene</title>
     </head>
     <body>
         <div class="bodyContent">
-            <h2 th:text="#{greeting.header}"></h2>
+            <div class="header">
+                <div class="greeting">
+                    <h2 th:text="#{greeting.header}"></h2>
+                </div>
+                <div class="lang">
+                    <img class="langButton" onclick="changeLangToRU()" src="static/index/images/ru.png">
+                    <img class="langButton" onclick="changeLangToEN()" src="static/index/images/en.png">
+                </div>
+            </div>
             <p th:text="#{greeting.p1}"></p>
             <p th:text="#{greeting.p2}"></p>
             <hr/>
@@ -43,7 +54,7 @@
                     </ul>
                 </dd>
             </dl>
-            <th:block th:text="#{stack.t1}"></th:block>
+            <h3 th:text="#{stack.t1}"></h3>
             <dl>
                 <dt>Java Swing</dt>
                 <dt>HTML/CSS/JS/JQuery</dt>
@@ -57,10 +68,12 @@
 
                 <div class="contactContainer">
                     <div class="imageContainer">
-                        <img src="static/index/images/gitHubImage.png" alt="Go to my Git hub">
+                        <a href="https://github.com/Latterfall">
+                            <img src="static/index/images/gitHubImage.png" alt="">
+                        </a>
                     </div>
                     <div class="textContainer">
-                        <a href="https://github.com/Latterfall">GitHub</a>
+                        <a href="https://github.com/Latterfall" th:text="#{contacts.git}"></a>
                     </div>
                 </div>
 
@@ -68,10 +81,12 @@
 
                 <div class="contactContainer">
                     <div class="imageContainer">
-                        <img src="static/index/images/hhImage.png" alt="Got to my HH">
+                        <a href="https://spb.hh.ru/resume/5836437bff07776e360039ed1f4a4d744b704d">
+                            <img src="static/index/images/hhImage.png" alt="">
+                        </a>
                     </div>
                     <div class="textContainer">
-                        <a href="https://spb.hh.ru/resume/5836437bff07776e360039ed1f4a4d744b704d">HH profile</a>
+                        <a href="https://spb.hh.ru/resume/5836437bff07776e360039ed1f4a4d744b704d" th:text="#{contacts.hh}"></a>
                     </div>
                 </div>
 
@@ -79,10 +94,12 @@
 
                 <div class="contactContainer">
                     <div class="imageContainer">
-                        <img src="static/index/images/gmailImage.png" alt="Send me email">
+                        <a href="mailto:Latterfall@gmail.com">
+                            <img src="static/index/images/gmailImage.png" alt="">
+                        </a>
                     </div>
                     <div class="textContainer">
-                        <a href="mailto:Latterfall@gmail.com">Email</a>
+                        <a href="mailto:Latterfall@gmail.com" th:text="#{contacts.mail}"></a>
                     </div>
                 </div>
 
