@@ -11,4 +11,8 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="PropertiesSeparatorManager">
+    <file url="file://$PROJECT_DIR$/src/main/resources/templates/index" separator="\u002e" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/templates/messages" separator="\u002e" />
+  </component>
 </project>

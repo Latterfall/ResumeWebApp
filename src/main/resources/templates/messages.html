@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang=""
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="static/messages/js/messages.js"></script>
+    <style>
+        @import "static/messages/css/messages.css";
+    </style>
+    <link rel="icon" type="image/ico" href="static/common/images/favicon-32x32.png">
+    <title th:text="#{messages.page_title}"></title>
+</head>
+    <body>
+        <div class="bodyContent">
+            <h2 th:text="#{messages.messages_area.header}"></h2>
+            <div class="messagesArea">
+                <div class="messagesContainer">
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

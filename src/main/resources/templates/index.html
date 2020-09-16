@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru"
+<html lang=""
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org">
     <head>
@@ -10,100 +10,130 @@
             @import "static/index/css/index.css";
         </style>
         <link rel="icon" type="image/ico" href="static/index/images/favicon-32x32.png">
-        <title>Resume site by Kostikov Eugene</title>
+        <title th:text="#{index.page_title}"></title>
     </head>
     <body>
         <div class="bodyContent">
-            <div class="header">
-                <div class="greeting">
-                    <h2 th:text="#{greeting.header}"></h2>
+            <div class="headerArea">
+                <div class="header">
+                    <div class="greeting">
+                        <h2 th:text="#{index.greeting_area.header}"></h2>
+                    </div>
+                    <div class="lang">
+                        <img class="langButton" onclick="changeLangToRU()" src="static/index/images/ru.png">
+                        <img class="langButton" onclick="changeLangToEN()" src="static/index/images/en.png">
+                    </div>
                 </div>
-                <div class="lang">
-                    <img class="langButton" onclick="changeLangToRU()" src="static/index/images/ru.png">
-                    <img class="langButton" onclick="changeLangToEN()" src="static/index/images/en.png">
+                <p th:text="#{index.greeting_area.paragraph_1}"></p>
+                <p th:text="#{index.greeting_area.paragraph_2}"></p>
+            </div>
+            <hr/>
+            <div class="bioArea">
+                <h2 th:text="#{index.bio_area.header}"></h2>
+                <p th:text="#{index.bio_area.paragraph_1}"></p>
+                <p th:text="#{index.bio_area.paragraph_2}"></p>
+                <p th:text="#{index.bio_area.paragraph_3}"></p>
+            </div>
+            <div class="technologyStackArea">
+                <hr/>
+                <h2 th:text="#{index.stack_area.header}"></h2>
+                <dl>
+                    <dt>Java 8:</dt>
+                    <dd>
+                        <ul>
+                            <li>Core</li>
+                            <li>Collections</li>
+                            <li>Streams</li>
+                            <li>Multithreading</li>
+                        </ul>
+                    </dd>
+                    <dt>SQL</dt>
+                    <dt>Hibernate</dt>
+                    <dt>Spring:</dt>
+                    <dd>
+                        <ul>
+                            <li>Core</li>
+                            <li>Security</li>
+                            <li>MVC</li>
+                            <li>ORM</li>
+                        </ul>
+                    </dd>
+                </dl>
+                <h2 th:text="#{index.stack_area.text_1}"></h2>
+                <dl>
+                    <dt>Java Swing</dt>
+                    <dt>HTML/CSS/JS/JQuery</dt>
+                    <dt>Git VCS</dt>
+                    <dt>Maven</dt>
+                </dl>
+            </div>
+            <hr/>
+            <div class="contactsArea">
+                <h2 th:text="#{index.contacts_area.header}"></h2>
+                <div class="contactsContainer">
+                    <div class="contactContainer">
+                        <div class="imageContainer">
+                            <a href="https://github.com/Latterfall">
+                                <img src="static/index/images/gitHubImage.png" alt="">
+                            </a>
+                        </div>
+                        <div class="textContainer">
+                            <a href="https://github.com/Latterfall" th:text="#{index.contacts_area.git}"></a>
+                        </div>
+                    </div>
+                    <div class="contactContainer">
+                        <div class="imageContainer">
+                            <a href="https://spb.hh.ru/resume/5836437bff07776e360039ed1f4a4d744b704d">
+                                <img src="static/index/images/hhImage.png" alt="">
+                            </a>
+                        </div>
+                        <div class="textContainer">
+                            <a href="https://spb.hh.ru/resume/5836437bff07776e360039ed1f4a4d744b704d" th:text="#{index.contacts_area.hh}"></a>
+                        </div>
+                    </div>
+                    <div class="contactContainer">
+                        <div class="imageContainer">
+                            <a href="mailto:Latterfall@gmail.com">
+                                <img src="static/index/images/gmailImage.png" alt="">
+                            </a>
+                        </div>
+                        <div class="textContainer">
+                            <a href="mailto:Latterfall@gmail.com" th:text="#{index.contacts_area.mail}"></a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <p th:text="#{greeting.p1}"></p>
-            <p th:text="#{greeting.p2}"></p>
-            <hr/>
-            <h2 th:text="#{bio.header}"></h2>
-            <p th:text="#{bio.p1}"></p>
-            <p th:text="#{bio.p2}"></p>
-            <p th:text="#{bio.p3}"></p>
-            <hr/>
-            <h2 th:text="#{stack.header}"></h2>
-            <dl>
-                <dt>Java 8:</dt>
-                <dd>
-                    <ul>
-                        <li>Core</li>
-                        <li>Collections</li>
-                        <li>Streams</li>
-                        <li>Multithreading</li>
-                    </ul>
-                </dd>
-                <dt>SQL</dt>
-                <dt>Hibernate framework for ORM;</dt>
-                <dt>Spring framework with embedded Tomcat HTTP server:</dt>
-                <dd>
-                    <ul>
-                        <li>Core</li>
-                        <li>Security</li>
-                        <li>MVC</li>
-                        <li>ORM</li>
-                    </ul>
-                </dd>
-            </dl>
-            <h3 th:text="#{stack.t1}"></h3>
-            <dl>
-                <dt>Java Swing</dt>
-                <dt>HTML/CSS/JS/JQuery</dt>
-                <dt>Git VCS</dt>
-                <dt>Maven</dt>
-            </dl>
-            <hr/>
-            <h2 th:text="#{contacts.header}"></h2>
-            <div class="contactsContainer">
-                <div class="emptySpaceBlock"></div>
-
-                <div class="contactContainer">
-                    <div class="imageContainer">
-                        <a href="https://github.com/Latterfall">
-                            <img src="static/index/images/gitHubImage.png" alt="">
-                        </a>
-                    </div>
-                    <div class="textContainer">
-                        <a href="https://github.com/Latterfall" th:text="#{contacts.git}"></a>
-                    </div>
+            <hr>
+            <div class="messagesArea">
+                <h2 th:text="#{index.message_area.header}"></h2>
+                <div class="messagesAreaBlock">
+                    <label for="messengerName" th:text="#{index.message_area.messenger_name}"></label>
+                    <input id="messengerName" type="text">
                 </div>
-
-                <div class="emptySpaceBlock"></div>
-
-                <div class="contactContainer">
-                    <div class="imageContainer">
-                        <a href="https://spb.hh.ru/resume/5836437bff07776e360039ed1f4a4d744b704d">
-                            <img src="static/index/images/hhImage.png" alt="">
-                        </a>
-                    </div>
-                    <div class="textContainer">
-                        <a href="https://spb.hh.ru/resume/5836437bff07776e360039ed1f4a4d744b704d" th:text="#{contacts.hh}"></a>
-                    </div>
+                <div class="messagesAreaBlock">
+                    <label for="messengerLastname" th:text="#{index.message_area.messenger_lastname}"></label>
+                    <input id="messengerLastname" type="text">
                 </div>
-
-                <div class="emptySpaceBlock"></div>
-
-                <div class="contactContainer">
-                    <div class="imageContainer">
-                        <a href="mailto:Latterfall@gmail.com">
-                            <img src="static/index/images/gmailImage.png" alt="">
-                        </a>
-                    </div>
-                    <div class="textContainer">
-                        <a href="mailto:Latterfall@gmail.com" th:text="#{contacts.mail}"></a>
-                    </div>
+                <div class="messagesAreaBlock">
+                    <label for="messengerEmail" th:text="#{index.message_area.messenger_email}"></label>
+                    <input id="messengerEmail" type="email">
                 </div>
-
-                <div class="emptySpaceBlock"></div>
+                <div class="messagesAreaBlock">
+                    <label for="messageHeader" th:text="#{index.message_area.message_header}"></label>
+                    <input id="messageHeader" type="text" required>
+                </div>
+                <div class="messagesAreaBlock">
+                    <label for="messageSubject" th:text="#{index.message_area.message_subject}"></label>
+                    <select id="messageSubject">
+                        <option value="Job" th:text="#{index.message_area.message_subject_job}"></option>
+                        <option value="Traineeship" th:text="#{index.message_area.message_subject_traineeship}"></option>
+                        <option value="Other" th:text="#{index.message_area.message_subject_other}"></option>
+                    </select>
+                </div>
+                <textarea id="messageText"></textarea>
+                <div class="messagesAreaSendButton">
+                    <button onclick="sendMessage()" th:text="#{index.message_area.submit_button}"></button>
+                </div>
             </div>
         </div>
     </body>

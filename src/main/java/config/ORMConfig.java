@@ -1,5 +1,6 @@
 package config;
 
+import model.Message;
 import model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -44,7 +45,8 @@ public class ORMConfig {
         properties.put("hibernate.dialect", environment.getProperty("hibernate.dialect"));
         sessionFactory.setHibernateProperties(properties);
         sessionFactory.setAnnotatedClasses(
-                User.class);
+                User.class,
+                Message.class);
         return sessionFactory;
     }
 

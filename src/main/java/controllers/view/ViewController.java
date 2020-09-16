@@ -11,4 +11,9 @@ public class ViewController {
     public String getIndexPage() {
         return "index";
     }
+
+    @GetMapping(path = "/messages")
+    public String getMessagesPage() {
+        return "messages";
+    }
 }

@@ -4,11 +4,11 @@ body {
 
     text-align: justify;
     font-family: "Courier New", serif;
-    font-size: 1vw;
+    font-size: 16px;
     color: white;
     font-weight: bolder;
 
-    background: url("../images/indexBackground.jpg") no-repeat fixed center;
+    background: url("../../common/images/background.jpg") no-repeat fixed center;
     background-size: cover;
 }
 .bodyContent {
@@ -49,28 +49,58 @@ img {
     height: 100%;
 }
 .contactsContainer {
-    width: 60vw;
-    height: 30vh;
+    width: 50vw;
+    height: 200px;
     display: flex;
+    justify-content: space-between;
     margin-top: 5vh;
-}
-.contactsContainer .emptySpaceBlock {
-    width: 7%;
-    display: inline-block;
+    padding-left: 5vw;
+    padding-right: 5vw;
 }
 .contactsContainer .contactContainer {
-    width: 24%;
+    width: 128px;
     height: 100%;
     display: inline-block;
 }
 .contactsContainer .contactContainer .imageContainer {
+    width: 128px;
+    height: 128px;
     text-align: center;
 }
 .contactsContainer .contactContainer .textContainer {
+    width: 100%;
+    height: 32px;
     text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
-textarea {
+.messagesArea {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    text-align: left;
+}
+.messagesAreaBlock {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+.messagesAreaBlock label {
+    display: block;
+}
+.messagesAreaBlock input {
+    width: 50%;
+    box-sizing: border-box;
+}
+.messagesAreaBlock select {
+    width: 50%;
+}
+.messagesArea textarea {
     resize: none;
-    width: 90%;
+    width: 100%;
+    height: 30vh;
     margin: auto;
+    border-radius: 4px;
+}
+.messagesAreaSendButton {
+    margin-top: 1vh;
+    text-align: center;
 }
