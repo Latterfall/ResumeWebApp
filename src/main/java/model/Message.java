@@ -6,7 +6,7 @@ import javax.persistence.*;
 @Table(name = "messages")
 public class Message {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     @Column(name = "messenger_name")
@@ -25,7 +25,7 @@ public class Message {
     @Enumerated(value = EnumType.ORDINAL)
     private MessageSubject messageSubject;
 
-    @Column(name = "message_text")
+    @Column(name = "message_text", length = 4095)
     private String messageText;
 
     @Column(name = "isViewed")

@@ -23,6 +23,15 @@ h2 {
     margin: 0;
     padding: 0;
 }
+.messagesHeader {
+    width: 100%;
+    height: 60px;
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
 .messageContainer {
     width: 100%;
     height: 60px;
@@ -32,23 +41,55 @@ h2 {
     margin-top: 1vh;
     margin-bottom: 1vh;
 }
-.messageContainer .messageImage {
+.messageImage {
     width: 60px;
     height: 60px;
     display: flex;
     place-content: center;
     align-items: center;
+    border-right: 1px solid white;
 }
-.messageContainer .messageImage img {
+.messageImage img {
     width: 32px;
     height: 32px;
 }
-.messageContainer .messageHeader {
+.messageHeader {
+    width: 55%;
+    height: 100%;
+    border-right: 1px solid white;
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+.messageHeader a {
+    cursor: pointer;
+}
+.messageSubject {
+    width: 20%;
+    height: 100%;
+    border-right: 1px solid white;
+    display: flex;
+    place-content: center;
+    align-items: center;
+}
+.actionButtons {
+    width: 25%;
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
-.messageContainer .messageHeader {
-    text-align: center;
+.actionButtons button {
+    margin-left: 5%;
+    margin-right: 5%;
 }
-.messageContainer .actionButtons {
+.messageText {
+    margin-top: 1vh;
+    margin-bottom: 5vh;
+}
+.messageText h2 {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+.messageFooter {
     text-align: center;
 }

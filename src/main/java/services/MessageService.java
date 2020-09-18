@@ -36,9 +36,9 @@ public class MessageService {
         messageRepository.deleteAll();
     }
 
-    public void setViewed(long id) {
+    public void setViewed(long id, boolean isViewed) {
         Message message = messageRepository.get(id);
-        message.setViewed(true);
+        message.setViewed(isViewed);
         messageRepository.update(message);
     }
 }

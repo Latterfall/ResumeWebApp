@@ -16,8 +16,13 @@
         <div class="bodyContent">
             <h2 th:text="#{messages.messages_area.header}"></h2>
             <div class="messagesArea">
+                <div class="messagesHeader">
+                    <div class="messageImage"></div>
+                    <div class="messageHeader" th:text="#{messages.messages_area.message_header}"></div>
+                    <div class="messageSubject" th:text="#{messages.messages_area.message_subject}"></div>
+                    <div class="actionButtons" th:text="#{messages.messages_area.message_actions}"></div>
+                </div>
                 <div class="messagesContainer">
-
                 </div>
             </div>
         </div>

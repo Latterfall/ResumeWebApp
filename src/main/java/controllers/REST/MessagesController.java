@@ -52,9 +52,11 @@ public class MessagesController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @PostMapping(path = "/setViewed/{id}")
-    public ResponseEntity<HttpStatus> setMessageViwed(@PathVariable long id) {
-        messageService.setViewed(id);
+    @PostMapping(path = "/setViewed/{id}/{isViewed}")
+    public ResponseEntity<HttpStatus> setMessageViewed(
+            @PathVariable long id,
+            @PathVariable boolean isViewed) {
+        messageService.setViewed(id, isViewed);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }
