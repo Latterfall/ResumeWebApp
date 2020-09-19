@@ -9,16 +9,16 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "messenger_name", nullable = false)
+    @Column(name = "messenger_name", nullable = false, length = 31)
     private String messengerName;
 
-    @Column(name = "messenger_lastname", nullable = false)
+    @Column(name = "messenger_lastname", nullable = false, length = 31)
     private String messengerLastname;
 
-    @Column(name = "messenger_email", nullable = false)
+    @Column(name = "messenger_email", nullable = false, length = 63)
     private String messengerEmail;
 
-    @Column(name = "message_header", nullable = false)
+    @Column(name = "message_header", nullable = false, length = 63)
     private String messageHeader;
 
     @Column(name = "message_subject", nullable = false)
@@ -29,7 +29,7 @@ public class Message {
     private String messageText;
 
     @Column(name = "isViewed", nullable = false)
-    private boolean isViewed;
+    private Boolean isViewed;
 
     public Message() {
     }
