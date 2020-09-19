@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    text-align: justify;
+    font-family: "Courier New", serif;
+    font-size: 16px;
+    color: white;
+    font-weight: bolder;
+
+    background: url("../../common/images/background.jpg") no-repeat fixed center;
+    background-size: cover;
+
+    display: flex;
+    place-content: center;
+    height: 100vh;
+}
+.bodyContent {
+    background-color: rgba(0, 0, 0, 0.7);
+
+    width: 60vw;
+    height: 30vh;
+    margin: auto;
+    padding: 5vh;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+.langButton {
+    width: 32px;
+    height: 16px;
+    cursor: pointer;
+}
+h2 {
+    margin: 0;
+    padding: 0;
+}

@@ -1,4 +1,4 @@
-let userLocale
+let isUserLocaleRU
 
 window.onload = function () {
     getUserLocale()
@@ -21,9 +21,17 @@ function getMessages() {
         dataType: "json",
         success: function (messages) {
             putMessagesInDocument(messages)
+            let buttonText
+            if (isUserLocaleRU) {
+                buttonText = "Вернуться на главную страницу"
+            } else {
+                buttonText = "Go back to main page"
+            }
             let messageFooter =
                 "<div class='messageFooter'>" +
-                "<button onclick='replaceToIndexPage()'>Go back</button>" +
+                    "<button onclick='replaceToIndexPage()'>" +
+                        buttonText +
+                    "</button>" +
                 "</div>"
             $(".messagesContainer").append(messageFooter)
         }
@@ -51,7 +59,7 @@ function getMessage(storyId) {
 }
 function addSetNotViewedButtonToMessage(storyId) {
     let setNotViewedButtonText
-    if (userLocale === "ru") {
+    if (isUserLocaleRU) {
         setNotViewedButtonText = "В непрочитанные"
     } else {
         setNotViewedButtonText = "Set not viewed"
@@ -64,7 +72,7 @@ function addSetNotViewedButtonToMessage(storyId) {
 }
 function addTextAndFooterToMessage(message) {
     let fromLabelText, messageTextLabelText, goBackButtonText
-    if (userLocale === "ru") {
+    if (isUserLocaleRU) {
         fromLabelText = "От:"
         messageTextLabelText = "Текст сообщения:"
         goBackButtonText = "Вернуться назад"
@@ -115,7 +123,7 @@ function putMessageInDocument(message, needToAddLink) {
         linkToTheMessage = message.messageHeader
     }
     let deleteButtonText
-    if (userLocale === "ru") {
+    if (isUserLocaleRU) {
         deleteButtonText = "Удалить"
     } else {
         deleteButtonText = "Delete"
@@ -143,18 +151,8 @@ function setMessageIsNotViewed(storyId) {
         url: "/api/messages/setViewed/" + storyId + "/false",
         success: function () {
             $(".messagesContainer .messageImage").html("<img src='static/messages/images/messageNotViewed.png'>")
-
         }
     });
-}
-function getUserLocale() {
-    $.ajax({
-        type: "GET",
-        url: "/api/locale",
-        success: function (locale) {
-            userLocale = locale
-        }
-    })
 }
 function replaceToIndexPage() {
     location.replace("/..")

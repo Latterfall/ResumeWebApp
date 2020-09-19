@@ -1,8 +1,8 @@
-function changeLangToRU() {
-    window.location.replace('?lang=ru');
-}
-function changeLangToEN() {
-    window.location.replace('?lang=en');
+let isUserLocaleRU
+
+window.onload = function () {
+    getUserLocale()
+    putActionButton()
 }
 function sendMessage() {
     let message = {
@@ -27,4 +27,33 @@ function sendMessage() {
     document.getElementById("messageHeader").value = ""
     document.getElementById("messageSubject").value = ""
     document.getElementById("messageText").value = ""
+}
+function goToLoginPage() {
+    location.replace("/login")
+}
+function goToMessagesPage() {
+    location.replace("/messages")
+}
+function putActionButton() {
+    $.ajax({
+        type: "GET",
+        url: "/api/user/isLogged",
+        success: function (response) {
+            let authActionButtonText, messagesActionButtonText
+            if (isUserLocaleRU) {
+                authActionButtonText = "Авторизация"
+                messagesActionButtonText = "К сообщениям"
+            } else {
+                authActionButtonText = "Authorization"
+                messagesActionButtonText = "Messages"
+            }
+            let langAndActionButtonsDiv = document.getElementById("langAndActionButtons")
+            let currentInnerHTML = langAndActionButtonsDiv.innerHTML
+            if (response) {
+                langAndActionButtonsDiv.innerHTML = "<button onclick=\"goToMessagesPage()\">" + messagesActionButtonText +"</button>" + currentInnerHTML
+            } else {
+                langAndActionButtonsDiv.innerHTML = "<button onclick=\"goToLoginPage()\">" + authActionButtonText +"</button>" + currentInnerHTML
+            }
+        }
+    });
 }

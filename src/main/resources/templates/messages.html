@@ -5,8 +5,10 @@
 <head>
     <meta charset="UTF-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="static/common/js/common.js"></script>
     <script src="static/messages/js/messages.js"></script>
     <style>
+        @import "static/common/css/common.css";
         @import "static/messages/css/messages.css";
     </style>
     <link rel="icon" type="image/ico" href="static/common/images/favicon-32x32.png">
@@ -14,7 +16,17 @@
 </head>
     <body>
         <div class="bodyContent">
-            <h2 th:text="#{messages.messages_area.header}"></h2>
+            <div class="headerArea">
+                <div class="header">
+                    <div class="greeting">
+                        <h2 th:text="#{messages.header_area.header}"></h2>
+                    </div>
+                    <div class="lang">
+                        <img class="langButton" onclick="changeLangToRU()" src="static/common/images/ru.png">
+                        <img class="langButton" onclick="changeLangToEN()" src="static/common/images/en.png">
+                    </div>
+                </div>
+            </div>
             <div class="messagesArea">
                 <div class="messagesHeader">
                     <div class="messageImage"></div>

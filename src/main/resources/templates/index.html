@@ -5,11 +5,13 @@
     <head>
         <meta charset="UTF-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="static/common/js/common.js"></script>
         <script src="static/index/js/index.js"></script>
         <style>
+            @import "static/common/css/common.css";
             @import "static/index/css/index.css";
         </style>
-        <link rel="icon" type="image/ico" href="static/index/images/favicon-32x32.png">
+        <link rel="icon" type="image/ico" href="static/common/images/favicon-32x32.png">
         <title th:text="#{index.page_title}"></title>
     </head>
     <body>
@@ -19,9 +21,9 @@
                     <div class="greeting">
                         <h2 th:text="#{index.greeting_area.header}"></h2>
                     </div>
-                    <div class="lang">
-                        <img class="langButton" onclick="changeLangToRU()" src="static/index/images/ru.png">
-                        <img class="langButton" onclick="changeLangToEN()" src="static/index/images/en.png">
+                    <div id="langAndActionButtons">
+                        <img class="langButton" onclick="changeLangToRU()" src="static/common/images/ru.png">
+                        <img class="langButton" onclick="changeLangToEN()" src="static/common/images/en.png">
                     </div>
                 </div>
                 <p th:text="#{index.greeting_area.paragraph_1}"></p>
@@ -49,6 +51,7 @@
                     </dd>
                     <dt>SQL</dt>
                     <dt>Hibernate</dt>
+                    <dt>Thymeleaf</dt>
                     <dt>Spring:</dt>
                     <dd>
                         <ul>
@@ -65,6 +68,7 @@
                     <dt>HTML/CSS/JS/JQuery</dt>
                     <dt>Git VCS</dt>
                     <dt>Maven</dt>
+                    <dt>IntelliJ IDEA</dt>
                 </dl>
             </div>
             <hr/>

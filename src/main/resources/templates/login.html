@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang=""
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script src="static/common/js/common.js"></script>
+    <style>
+        @import "static/common/css/common_2.css";
+        @import "static/login/css/login.css";
+    </style>
+    <link rel="icon" type="image/ico" href="static/common/images/favicon-32x32.png">
+    <title th:text="#{login.page_title}"></title>
+</head>
+    <body>
+        <div class="bodyContent">
+            <div class="headerArea">
+                <div class="header">
+                    <div class="greeting">
+                        <h2 th:text="#{login.header_area.header}"></h2>
+                    </div>
+                    <div class="lang">
+                        <img class="langButton" onclick="changeLangToRU()" src="static/common/images/ru.png">
+                        <img class="langButton" onclick="changeLangToEN()" src="static/common/images/en.png">
+                    </div>
+                </div>
+            </div>
+            <div class="loginArea">
+                <form method="post" action="/login">
+                    <div class="loginForm">
+                        <label for="username" th:text="#{login.login_area.username_label}"></label>
+                        <input type="text" id="username" name="username">
+                        <label for="password" th:text="#{login.login_area.user_password_label}"></label>
+                        <input type="password" id="password" name="password">
+                        <input type="submit" value="login">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

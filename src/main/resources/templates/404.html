@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang=""
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script src="static/common/js/common.js"></script>
+    <style>
+        @import "static/common/css/common_2.css";
+        @import "static/404/css/404.css";
+    </style>
+    <link rel="icon" type="image/ico" href="static/common/images/favicon-32x32.png">
+    <title th:text="#{404.page_title}"></title>
+</head>
+    <body>
+        <div class="bodyContent">
+            <div class="headerArea">
+                <div class="header">
+                    <div class="greeting">
+                        <h2>404</h2>
+                    </div>
+                    <div class="lang">
+                        <img class="langButton" onclick="changeLangToRU()" src="static/common/images/ru.png">
+                        <img class="langButton" onclick="changeLangToEN()" src="static/common/images/en.png">
+                    </div>
+                </div>
+                <p th:text="#{404.error_text}"></p>
+            </div>
+        </div>
+    </body>
+</html>

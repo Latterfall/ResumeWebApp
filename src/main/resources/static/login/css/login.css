@@ -1,0 +1,20 @@
+form {
+    display: flex;
+    place-content: center;
+}
+.loginForm {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 40%;
+}
+.loginForm label {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 100%;
+}
+.loginForm input {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    width: 100%;
+    box-sizing: border-box;
+}

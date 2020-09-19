@@ -16,4 +16,9 @@ public class ViewController {
     public String getMessagesPage() {
         return "messages";
     }
+
+    @GetMapping(path = "/login")
+    public String getLoginPage() {
+        return "login";
+    }
 }

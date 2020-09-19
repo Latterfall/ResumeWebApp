@@ -9,26 +9,26 @@ public class Message {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "messenger_name")
+    @Column(name = "messenger_name", nullable = false)
     private String messengerName;
 
-    @Column(name = "messenger_lastname")
+    @Column(name = "messenger_lastname", nullable = false)
     private String messengerLastname;
 
-    @Column(name = "messenger_email")
+    @Column(name = "messenger_email", nullable = false)
     private String messengerEmail;
 
-    @Column(name = "message_header")
+    @Column(name = "message_header", nullable = false)
     private String messageHeader;
 
-    @Column(name = "message_subject")
+    @Column(name = "message_subject", nullable = false)
     @Enumerated(value = EnumType.ORDINAL)
     private MessageSubject messageSubject;
 
-    @Column(name = "message_text", length = 4095)
+    @Column(name = "message_text", length = 4095, nullable = false)
     private String messageText;
 
-    @Column(name = "isViewed")
+    @Column(name = "isViewed", nullable = false)
     private boolean isViewed;
 
     public Message() {

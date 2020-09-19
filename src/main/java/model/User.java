@@ -1,41 +1,78 @@
 package model;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.Set;
 
 @Entity
 @Table(name = "users")
 @PersistenceUnit
-public class User {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id")
-    long userID;
+    private long id;
 
-    @Column(name = "name")
-    String name;
+    @Column(name = "name", unique = true, nullable = false)
+    private String name;
 
-    @Column(name = "lastname")
-    String lastName;
+    @Column(name = "password", nullable = false)
+    private char[] password;
 
-    @Column(name = "password")
-    char[] password;
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "users_roles",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "role_id")
+    )
+    private Set<Role> roles;
 
     public User() {
     }
 
-    public User(long userID, String name, String lastName, char[] password) {
-        this.userID = userID;
-        this.name = name;
-        this.lastName = lastName;
-        this.password = password;
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return roles;
     }
 
-    public long getUserID() {
-        return userID;
+    @Override
+    public String getPassword() {
+        return String.valueOf(password);
     }
 
-    public void setUserID(long userID) {
-        this.userID = userID;
+    @Override
+    public String getUsername() {
+        return name;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -46,19 +83,15 @@ public class User {
         this.name = name;
     }
 
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public char[] getPassword() {
-        return password;
-    }
-
     public void setPassword(char[] password) {
         this.password = password;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 }
