@@ -35,18 +35,6 @@ public class WebMVCConfig implements WebMvcConfigurer {
         registry.addInterceptor(getLocaleChangeInterceptor());
     }
 
-    @Bean
-    public MessageSource messageSource() {
-        ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
-        messageSource.setBasenames(
-                "static/index/lang/index",
-                "static/messages/lang/messages",
-                "static/login/lang/login",
-                "static/404/lang/404");
-        messageSource.setDefaultEncoding("UTF-8");
-        return messageSource;
-    }
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("static/**")
