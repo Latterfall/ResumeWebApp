@@ -64,22 +64,15 @@ function setZoomingElements(elementOneId, elementTwoId) {
 
 
 function sendMessage() {
-    let messageSubjectInput = $("#messageSubject")
-    let messengerNameInput = $("#messengerName")
-    let messengerLastnameInput = $("#messengerLastname")
-    let messengerEmailInput = $("#messengerEmail")
-    let messengerCompanyInput = $("#messengerCompany")
-    let messageTextInput = $("#messageText")
-
     let message = {
-        "messageSubject" : messageSubjectInput[0].value,
-        "messengerName" : messengerNameInput[0].value,
-        "messengerLastname" : messengerLastnameInput[0].value,
-        "messengerEmail" : messengerEmailInput[0].value,
-        "messengerCompany" : messengerCompanyInput[0].value,
-        "messageText" : messageTextInput[0].value
+        "messageSubject" : $("#messageSubject").val(),
+        "messengerName" : $("#messengerName").val(),
+        "messengerLastname" : $("#messengerLastname").val(),
+        "messengerEmail" : $("#messengerEmail").val(),
+        "messengerCompany" : $("#messengerCompany").val(),
+        "messageText" : $("#messageText").val()
     }
-    console.log(message)
+
     $.ajax({
         type: "POST",
         url: "/api/messages/add",
@@ -88,12 +81,12 @@ function sendMessage() {
         dataType: "json"
     });
 
-    alert("MESSAGE WAS SENT")
+    alert("Thank you for your message!")
 
-    messageSubjectInput.value = ""
-    messengerNameInput.value = ""
-    messengerLastnameInput.value = ""
-    messengerEmailInput.value = ""
-    messengerCompanyInput.value = ""
-    messageTextInput.value = ""
+    $("#messageSubject").val("")
+    $("#messengerName").val("")
+    $("#messengerLastname").val("")
+    $("#messengerEmail").val("")
+    $("#messengerCompany").val("")
+    $("#messageText").val("")
 }
