@@ -1,144 +1,423 @@
-<!DOCTYPE html>
-<html lang=""
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="static/common/js/common.js"></script>
-        <script src="static/index/js/index.js"></script>
-        <style>
-            @import "static/common/css/common.css";
-            @import "static/index/css/index.css";
-        </style>
-        <link rel="icon" type="image/ico" href="static/common/images/favicon-32x32.png">
-        <title th:text="#{index.page_title}"></title>
-    </head>
-    <body>
-        <div class="bodyContent">
-            <div class="headerArea">
-                <div class="header">
-                    <div class="greeting">
-                        <h2 th:text="#{index.greeting_area.header}"></h2>
-                    </div>
-                    <div id="langAndActionButtons">
-                        <img class="langButton" onclick="changeLangToRU()" src="static/common/images/ru.png">
-                        <img class="langButton" onclick="changeLangToEN()" src="static/common/images/en.png">
-                    </div>
-                </div>
-                <p th:text="#{index.greeting_area.paragraph_1}"></p>
-                <p th:text="#{index.greeting_area.paragraph_2}"></p>
-            </div>
-            <hr/>
-            <div class="bioArea">
-                <h2 th:text="#{index.bio_area.header}"></h2>
-                <p th:text="#{index.bio_area.paragraph_1}"></p>
-                <p th:text="#{index.bio_area.paragraph_2}"></p>
-                <p th:text="#{index.bio_area.paragraph_3}"></p>
-            </div>
-            <div class="technologyStackArea">
-                <hr/>
-                <h2 th:text="#{index.stack_area.header}"></h2>
-                <dl>
-                    <dt>Java 8:</dt>
-                    <dd>
-                        <ul>
-                            <li>Core</li>
-                            <li>Collections</li>
-                            <li>Streams</li>
-                            <li>Multithreading</li>
-                        </ul>
-                    </dd>
-                    <dt>SQL</dt>
-                    <dt>Hibernate</dt>
-                    <dt>Thymeleaf</dt>
-                    <dt>Spring:</dt>
-                    <dd>
-                        <ul>
-                            <li>Core</li>
-                            <li>Security</li>
-                            <li>MVC</li>
-                            <li>ORM</li>
-                        </ul>
-                    </dd>
-                </dl>
-                <h2 th:text="#{index.stack_area.text_1}"></h2>
-                <dl>
-                    <dt>Java Swing</dt>
-                    <dt>HTML/CSS/JS/JQuery</dt>
-                    <dt>Git VCS</dt>
-                    <dt>Maven</dt>
-                    <dt>IntelliJ IDEA</dt>
-                </dl>
-            </div>
-            <hr/>
-            <div class="contactsArea">
-                <h2 th:text="#{index.contacts_area.header}"></h2>
-                <div class="contactsContainer">
-                    <div class="contactContainer">
-                        <div class="imageContainer">
-                            <a href="https://github.com/Latterfall">
-                                <img src="static/index/images/gitHubImage.png" alt="">
-                            </a>
+<html lang="">
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <!--Splide-->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+
+    <!--JQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <style>
+        @import "static/index/css/index.css";
+        @import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap");
+    </style>
+    
+    <script src="static/index/js/index.js"></script>
+    <link rel="icon" type="image/png" sizes="16x16" href="static/index/img/favicon/favicon-32x32.png">
+    <title>Резюме | Евгений Костиков</title>
+</head>
+
+<body>
+    <div class="headerBlock" style="background-image: url('static/index/img/header.gif');">
+        <div class="text">
+            <pre><code>while (isAlive) {&#010   sleep();&#010   eat();&#010   code();&#010}</code></pre>
+        </div>
+    </div>
+
+
+
+    <div class="sliderBlock">
+        <div class="slider">
+            <div class="splide">
+                <div class="splide__track">
+                    <div class="splide__list">
+                        <div class="splide__slide">
+                            <div class="text">
+                                Приветствую! Вы попали на страницу-резюме Костикова Евгения, то есть меня :D
+                            </div>
                         </div>
-                        <div class="textContainer">
-                            <a href="https://github.com/Latterfall" th:text="#{index.contacts_area.git}"></a>
+                        <div class="splide__slide">
+                            <div class="text">
+                                Это простой сайт, созданный мной целиком и полностью с нуля в демонстрационных целях. На серверной стороне я использую Spring Framework, на пользовательской - чистый HTML/CSS, а также JS с некоторыми библиотеками.
+                            </div>
+                        </div>
+                        <div class="splide__slide">
+                            <div class="text">
+                                Я занимаюсь разработкой вот уже год и ищу возможность применить свои навыки. Моя мечта - стать Java разработчиком и тип задач для меня не имеет значения: я люблю учиться и создавать новое.
+                            </div>
+                        </div>
+                        <div class="splide__slide">
+                            <div class="text">
+                                Я буду рад Вашим предложениям о работе и стажировке!
+                            </div>
                         </div>
                     </div>
-                    <div class="contactContainer">
-                        <div class="imageContainer">
-                            <a href="https://spb.hh.ru/resume/5836437bff07776e360039ed1f4a4d744b704d">
-                                <img src="static/index/images/hhImage.png" alt="">
-                            </a>
-                        </div>
-                        <div class="textContainer">
-                            <a href="https://spb.hh.ru/resume/5836437bff07776e360039ed1f4a4d744b704d" th:text="#{index.contacts_area.hh}"></a>
-                        </div>
-                    </div>
-                    <div class="contactContainer">
-                        <div class="imageContainer">
-                            <a href="mailto:Latterfall@gmail.com">
-                                <img src="static/index/images/gmailImage.png" alt="">
-                            </a>
-                        </div>
-                        <div class="textContainer">
-                            <a href="mailto:Latterfall@gmail.com" th:text="#{index.contacts_area.mail}"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="messagesArea">
-                <h2 th:text="#{index.message_area.header}"></h2>
-                <div class="messagesAreaBlock">
-                    <label for="messengerName" th:text="#{index.message_area.messenger_name}"></label>
-                    <input id="messengerName" type="text">
-                </div>
-                <div class="messagesAreaBlock">
-                    <label for="messengerLastname" th:text="#{index.message_area.messenger_lastname}"></label>
-                    <input id="messengerLastname" type="text">
-                </div>
-                <div class="messagesAreaBlock">
-                    <label for="messengerEmail" th:text="#{index.message_area.messenger_email}"></label>
-                    <input id="messengerEmail" type="email">
-                </div>
-                <div class="messagesAreaBlock">
-                    <label for="messageHeader" th:text="#{index.message_area.message_header}"></label>
-                    <input id="messageHeader" type="text" required>
-                </div>
-                <div class="messagesAreaBlock">
-                    <label for="messageSubject" th:text="#{index.message_area.message_subject}"></label>
-                    <select id="messageSubject">
-                        <option value="Job" th:text="#{index.message_area.message_subject_job}"></option>
-                        <option value="Traineeship" th:text="#{index.message_area.message_subject_traineeship}"></option>
-                        <option value="Other" th:text="#{index.message_area.message_subject_other}"></option>
-                    </select>
-                </div>
-                <textarea id="messageText"></textarea>
-                <div class="messagesAreaSendButton">
-                    <button onclick="sendMessage()" th:text="#{index.message_area.submit_button}"></button>
                 </div>
             </div>
         </div>
-    </body>
+    </div>
+
+
+
+    <div class="navigationGridBlock">
+        <div class="navigationCardContainer">
+            <div class="navigationCardOverlay">
+                <div class="text">
+                    Краткая биография моей жизни
+                </div>
+            </div>
+            <div class="navigationCard">
+                <div class="image">
+                    <img src="static/index/img/navigation/bio.png">
+                </div>
+                <div class="text">
+                    ОБО МНЕ
+                </div>
+            </div>
+        </div>
+        <div class="navigationCardContainer">
+            <div class="navigationCardOverlay">
+                <div class="text">
+                    Технологии, с которыми я работаю
+                </div>
+            </div>
+            <div class="navigationCard">
+                <div class="image">
+                    <img src="static/index/img/navigation/stack.png">
+                </div>
+                <div class="text">
+                    СТЭК
+                </div>
+            </div>
+        </div>
+        <div class="navigationCardContainer">
+            <div class="navigationCardOverlay">
+                <div class="text">
+                    Способы связи со мной
+                </div>
+            </div>
+            <div class="navigationCard">
+                <div class="image">
+                    <img src="static/index/img/navigation/contacts.png">
+                </div>
+                <div class="text">
+                    КОНТАКТЫ
+                </div>
+            </div>
+        </div>
+        <div class="navigationCardContainer">
+            <div class="navigationCardOverlay">
+                <div class="text">
+                    Отправить мне сообщение
+                </div>
+            </div>
+            <div class="navigationCard">
+                <div class="image">
+                    <img src="static/index/img/navigation/message.png">
+                </div>
+                <div class="text">
+                    СООБЩЕНИЕ
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="biographyGridBlock">
+        <div class="relatedCards verticallyDivided" id="biographyIntroductionCardsBlock">
+            <div class="imageBlock" id="biographyIntroductionImageCard">
+                <div class="image" id="biographyIntroductionImage" style="background-image: url('static/index/img/murmansk-1.jpg');"></div>
+            </div>
+            <div class="textBlockContainer" id="biographyIntroductionHeaderCard">
+                <div class="textBlock">
+                    <div class="text header">
+                        <h1>ОБО МНЕ</h1>
+                        <p>Краткая биография моей жизни</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="relatedCards horizontallyDivided" id="biographyEarlyYearsCardsBlock">
+            <div class="imageBlock" id="biographyEarlyYearsImageCard">
+                <div class="image" id="biographyEarlyYearsImage" style="background-image: url('static/index/img/murmansk-2.jpg');"></div>
+            </div>
+            <div class="textBlockContainer commonTextBlock" id="biographyEarlyYearsTextCard">
+                <div class="textBlock">
+                    <div class="text common">
+                        <h1>Ранние годы</h1>
+                        <p>
+                            Я родился и прожил большую часть своей жизни в Мурманске, крупнейшем городе за Полярным
+                            кругом. Среднее образование я получил в мурманском Политехническом лицее. Уже тогда мы с
+                            друзьями увлечённо делали свои первые шаги в программировании и знакомились с Turbo
+                            Pascal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="relatedCards horizontallyDivided" id="biographyStudyingCardsBlock">
+            <div class="relatedCards verticallyDivided" id="biographyStudyingHeaderCardsBlock">
+                <div class="textBlockContainer headerTextBlock" id="biographyStudyingHeaderCard">
+                    <div class="textBlock">
+                        <div class="text header">
+                            <h1>ОБРАЗОВАНИЕ</h1>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="imageBlock" id="biographyStudyingHeaderImageCard">
+                    <div class="image" id="biographyStudyingHeaderImage" style="background-image: url('static/index/img/studying.jpg');"></div>
+                </div>
+            </div>
+            <div class="textBlockContainer commonTextBlock" id="biographyStudyingTextCard">
+                <div class="textBlock">
+                    <div class="text common">
+                        <h1>ВУЗовская подготовка</h1>
+                        <p>
+                            У меня незаконченное высшее образование, которое я планирую продолжить в заочной форме
+                            после трудоустройства. Я проходил обучение в СПбГУПС по специальности УПЛ (управление
+                            перевозками и логистика) и в СПбГУТ по специальности ИКСС (инфокоммуникационные системы
+                            и сети), однако эти направления не позволяли мне полностью раскрыть свои возможности, поэтому я прервал учёбу в ВУЗах. Но в обучение в университете были и интересные аспекты: я изучил азы VBA, C++ и, собственно, Java. Моя страсть к программированию помогла мне быстро овладеть учебным материалом, чему был рад не только я, но и другие одногруппники :D
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="relatedCards horizontallyDivided" id="biographyWorkingCardsBlock">
+            <div class="imageBlock" id="biographyWorkingImageCard">
+                <div class="image" id="biographyWorkingImage" style="background-image: url('static/index/img/working.jpg');"></div>
+            </div>
+            <div class="textBlockContainer commonTextBlock" id="biographyWorkingTextCard">
+                <div class="textBlock">
+                    <div class="text common">
+                        <h1>Рабочая деятельность</h1>
+                        <p>
+                            После учёбы я устроился на работу в компанию Дом.ру на должность ассистента директора
+                            эксплуатации сети, где и проработал с успехом в течении года. Среди всего широкого
+                            спектра моих должностных обязательств нашлось место и программированию: я автоматизировал
+                            отчётности и обрабатывал большие объёмы данных (с которыми Excel не справлялся
+                            стандартными средствами) с использованием VBA. Сменить работу я решил после того, как
+                            мои друзья предложили мне поучаствовать в их старт-апе, где, опять же, кроме всего прочего приходилось
+                            работать с кодом. Там я ближе познакомился со строением и работой веб приложений.
+                            Однако, проект заглох. Рассудив, что написание кода это именно то, что я люблю и то, чем я могу заниматься бесконечно долго, я твёрдо решил связать свою жизнь с разработкой и начал своё обучение!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="imageBlock" id="biographyCodingImageBlock">
+            <div class="image" id="biographyCodingImage" style="background-image: url('static/index/img/programming.jpg');"></div>
+        </div>
+    </div>
+
+
+
+    <div class="technologyStackBlock">
+        <div class="technologyStackHeader">
+            <h1>СТЭК</h1>
+            <p>
+                Список технологий, которые я знаю и которыми пользуюсь. В частности для создания этого сайта.
+            </p>
+        </div>
+        <div class="technologyStackGrid">
+            <div class="technologyCell">
+                <div class="technologyCellContent">
+                    <div class="technologyImage" style="background-image: url('static/index/img/logos/git-logo.png');"></div>
+                    <div class="technologyDesc">
+                        Git VCS
+                    </div>
+                </div>
+            </div>
+            <div class="technologyCell">
+                <div class="technologyCellContent">
+                    <div class="technologyImage" style="background-image: url('static/index/img/logos/maven-logo.png');"></div>
+                    <div class="technologyDesc">
+                        Apache Maven
+                    </div>
+                </div>
+            </div>
+            <div class="technologyCell">
+                <div class="technologyCellContent">
+                    <div class="technologyImage" style="background-image: url('static/index/img/logos/java-logo.png');"></div>
+                    <div class="technologyDesc">
+                        Java 8
+                    </div>
+                </div>
+            </div>
+            <div class="technologyCell">
+                <div class="technologyCellContent">
+                    <div class="technologyImage" style="background-image: url('static/index/img/logos/mysql-logo.png');"></div>
+                    <div class="technologyDesc">
+                        MySQL
+                    </div>
+                </div>
+            </div>
+            <div class="technologyCell">
+                <div class="technologyCellContent">
+                    <div class="technologyImage" style="background-image: url('static/index/img/logos/hibernate-logo.png');"></div>
+                    <div class="technologyDesc">
+                        Hibernate ORM
+                    </div>
+                </div>
+            </div>
+            <div class="technologyCell">
+                <div class="technologyCellContent">
+                    <div class="technologyImage" style="background-image: url('static/index/img/logos/thymeleaf-logo.png');"></div>
+                    <div class="technologyDesc">
+                        Thymeleaf
+                    </div>
+                </div>
+            </div>
+            <div class="technologyCell">
+                <div class="technologyCellContent">
+                    <div class="technologyImage" style="background-image: url('static/index/img/logos/spring-logo.png');"></div>
+                    <div class="technologyDesc">
+                        Spring framework
+                    </div>
+                </div>
+            </div>
+            <div class="technologyCell">
+                <div class="technologyCellContent">
+                    <div class="technologyImage" style="background-image: url('static/index/img/logos/html-logo.png');"></div>
+                    <div class="technologyDesc">
+                        HTML
+                    </div>
+                </div>
+            </div>
+            <div class="technologyCell">
+                <div class="technologyCellContent">
+                    <div class="technologyImage" style="background-image: url('static/index/img/logos/css-logo.png');"></div>
+                    <div class="technologyDesc">
+                        CSS
+                    </div>
+                </div>
+            </div>
+            <div class="technologyCell">
+                <div class="technologyCellContent">
+                    <div class="technologyImage" style="background-image: url('static/index/img/logos/js-logo.png');"></div>
+                    <div class="technologyDesc">
+                        JS
+                    </div>
+                </div>
+            </div>
+            <div class="technologyCell">
+                <div class="technologyCellContent">
+                    <div class="technologyImage" style="background-image: url('static/index/img/logos/jquery-logo.png');"></div>
+                    <div class="technologyDesc">
+                        JQuery
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="contactsBlock">
+        <div class="contactsHeader">
+            <h1>КОНТАКТЫ</h1>
+        </div>
+        <div class="contactsRow">
+            <a href="https://github.com/Latterfall">
+                <div class="contactCell">
+                    <div class="contactImage" style="background-image: url('static/index/img/logos/gitHubImage.png');"></div>
+                    <div class="contactDesc">GitHub</div>
+                </div>
+            </a>
+            <a href="https://spb.hh.ru/resume/5836437bff07776e360039ed1f4a4d744b704d">
+                <div class="contactCell">
+                    <div class="contactImage" style="background-image: url('static/index/img/logos/hhImage.png');"></div>
+                    <div class="contactDesc">HeadHunter</div>
+                </div>
+            </a>
+            <a href="mailto:Latterfall@gmail.com">
+                <div class="contactCell">
+                    <div class="contactImage" style="background-image: url('static/index/img/logos/gmailImage.png');"></div>
+                    <div class="contactDesc">GMail</div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+
+    <div class="messageFormBlock">
+        <div class="messageFormHeader">
+            <h1>ЗАДАЙТЕ ВОПРОС</h1>
+        </div>
+        <div class="messageFormGrid">
+            <div class="gridContainer wideBlock">
+                <div class="gridBlock">
+                    <label for="messageSubject">Тема сообщения</label>
+                </div>
+                <div class="gridBlock">
+                    <select id="messageSubject">
+                        <option value="Job">Работа</option>
+                        <option value="Traineeship">Стажировка</option>
+                        <option value="Other">Другое</option>
+                    </select>
+                </div>
+            </div>
+            <div class="gridContainer">
+                <div class="gridBlock">
+                    <label for="messengerName">Ваше имя</label>
+                </div>
+                <div class="gridBlock">
+                    <input id="messengerName" type="text">
+                </div>
+            </div>
+            <div class="gridContainer">
+                <div class="gridBlock">
+                    <label for="messengerLastname">Ваша фамилия</label>
+                </div>
+                <div class="gridBlock">
+                    <input id="messengerLastname" type="text">
+                </div>
+            </div>
+            <div class="gridContainer">
+                <div class="gridBlock">
+                    <label for="messengerEmail">Ваша почта</label>
+                </div>
+                <div class="gridBlock">
+                    <input id="messengerEmail" type="email">
+                </div>
+            </div>
+            <div class="gridContainer">
+                <div class="gridBlock">
+                    <label for="messengerCompany">Ваша компания</label>
+                </div>
+                <div class="gridBlock">
+                    <input id="messengerCompany" type="text" required>
+                </div>
+            </div>
+            <div class="gridContainer wideBlock" id="messageTextAreaBlockContainer">
+                <div class="gridBlock">
+                    <label for="messageText">Ваше сообщение</label>
+                </div>
+                <div id="messageTextArea">
+                    <textarea id="messageText"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="messageFormButton">
+            <button onclick="sendMessage()">Отправить</button>
+        </div>
+    </div>
+</body>
+
 </html>

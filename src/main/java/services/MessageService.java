@@ -3,7 +3,6 @@ package services;
 import model.Message;
 import org.springframework.stereotype.Service;
 import repository.impl.MessageRepository;
-
 import javax.transaction.Transactional;
 import java.util.List;
 

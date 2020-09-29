@@ -13,7 +13,7 @@ public class AppConfig {
     public MessageSource messageSource() {
         ResourceBundleMessageSource messageSource = new ResourceBundleMessageSource();
         messageSource.setBasenames(
-                "static/index/lang/index",
+                "static/index_old/lang/index",
                 "static/messages/lang/messages",
                 "static/login/lang/login",
                 "static/404/lang/404");

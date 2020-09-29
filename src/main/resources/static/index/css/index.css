@@ -1,72 +1,986 @@
-dt {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    margin-left: 30px;
+* {
+    margin: 0;
+    padding: 0;
 }
-dd {
-    margin-left: 60px;
+a, a:hover, a:visited, a:link, a:active {
+    color: black;
+    text-decoration: unset;
 }
-a {
-    color: inherit;
-    text-decoration: none;
-}
-img {
+body {
+    font-family: "Comfortaa";
+
     width: 100%;
     height: 100%;
 }
-.contactsContainer {
-    width: 50vw;
-    height: 200px;
+
+
+
+/* Header */
+
+
+
+.headerBlock {
+    width: 100%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    position: relative;
+}
+.headerBlock .text {
+    color: rgb(219, 219, 219);
+    font-weight: bolder;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Header - adapting */
+
+@media screen and (min-width: 1200px) {
+    .headerBlock {
+        height: 500px;
+    }
+    .headerBlock .text {
+        font-size: 35pt;
+    }
+}
+@media screen and (min-width: 750px) and (max-width: 1199px) {
+    .headerBlock {
+        height: 350px;
+    }
+    .headerBlock .text {
+        font-size: 30pt;
+    }
+}
+@media screen and (min-width: 0px) and (max-width: 749px) {
+    .headerBlock {
+        height: 300px;
+    }
+    .headerBlock .text {
+        font-size: 20pt;
+    }
+}
+
+/* Slider */
+
+
+
+.slider {
+    position: relative;
+}
+.slider .text {
+    text-align: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.splide__slide {
+    width: 100%;
+}
+.splide__slide:nth-child(1) {
+    background-color:orange;
+}
+.splide__slide:nth-child(2) {
+    background-color: rgb(0, 138, 206);
+}
+.splide__slide:nth-child(3) {
+    background-color:rgb(255, 134, 144);
+}
+.splide__slide:nth-child(4) {
+    background-color:rgb(206, 222, 90);
+}
+
+/* Slider - adapting */
+
+@media screen and (min-width: 1200px) {
+    .splide__slide {
+        height: 250px;
+
+        font-size: 15pt;
+    }
+}
+@media screen and (min-width: 750px) and (max-width: 1199px) {
+    .splide__slide {
+        height: 250px;
+        
+        font-size: 12pt;
+    }
+}
+@media screen and (min-width: 0px) and (max-width: 749px) {
+    .splide__slide {
+        height: 150px;
+        
+        font-size: 9pt;
+    }
+    .splide__slide .text {
+        width: 80%;
+    }
+}
+
+/* Navigation */
+
+
+
+.navigationGridBlock {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.navigationCardContainer {
+    background-color: rgb(38, 56, 82);
+
+    cursor: pointer;
+
+    position: relative;
+}
+.navigationCardContainer:hover .navigationCardOverlay {
+    bottom: 0;
+    height: 100%;
+}
+.navigationCard {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.navigationCard .image {
+    width: 100%;
+    margin: auto;
+}
+.navigationCard .text {
+    width: 100%;
+
+    color: white;
+}
+.navigationCardOverlay {
+    width: 100%;
+    height: 0;
+
+    bottom: 100%;
+    left: 0;
+    right: 0;
+
+    overflow: hidden;
+    position: absolute;
+    transition: 0.5s ease;
+    background-color: rgb(51, 178, 192);
+}
+.navigationCardOverlay .text {
+    width: 100%;
+
+    color: white;
+    text-align: center;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Navigation - adapting */
+
+@media screen and (min-width: 1200px) {
+    .navigationGridBlock {
+        grid-auto-rows: 230px;
+    }
+    .navigationCardContainer {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    .navigationCard .image {
+        height: 200px;
+    }
+    .navigationCard .image img {
+        width: 150px;
+        height: 150px;
+    
+        padding: 25px;
+    }
+    .navigationCard .text {
+        font-size: 15pt;
+    }
+    .navigationCardOverlay .text {
+        font-size: 15pt;
+    }
+}
+@media screen and (min-width: 750px) and (max-width: 1199px) {
+    .navigationGridBlock {
+        grid-auto-rows: 200px;
+    }
+    .navigationCardContainer {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    .navigationCard .image {
+        height: 150px;
+    }
+    .navigationCard .image img {
+        width: 100px;
+        height: 100px;
+    
+        padding: 25px;
+    }
+    .navigationCard .text {
+        font-size: 15pt;
+    }
+    .navigationCardOverlay .text {
+        font-size: 15pt;
+    }
+}
+@media screen and (min-width: 0px) and (max-width: 749px) {
+    .navigationGridBlock {
+        grid-auto-rows: 180px;
+    }
+    .navigationCardContainer {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    .navigationCard .image {
+        height: 150px;
+    }
+    .navigationCard .image img {
+        width: 100px;
+        height: 100px;
+    
+        padding: 25px;
+    }
+    .navigationCard .text {
+        font-size: 13pt;
+    }
+    .navigationCardOverlay .text {
+        font-size: 13pt;
+    }
+}
+
+/* Biography */
+
+/* Biography - grid */
+
+.biographyGridBlock {
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+}
+.relatedCards {
+    display: grid;
+}
+.verticallyDivided {
+    grid-template-columns: repeat(2, 1fr);
+}
+.horizontallyDivided {
+    grid-template-columns: 1fr;
+}
+
+/* Biography - grid - adapting */
+
+@media screen and (min-width: 1200px) {
+    .biographyGridBlock {
+        grid-auto-rows: 25vw;
+    }
+    .relatedCards {
+        grid-auto-rows: 25vw;
+    }
+
+    /* Introduction */
+
+    #biographyIntroductionCardsBlock {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    #biographyIntroductionImageCard {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    #biographyIntroductionHeaderCard {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    /* Early years */
+
+    #biographyEarlyYearsCardsBlock {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    #biographyEarlyYearsImageCard {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    #biographyEarlyYearsTextCard {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    /* Studying */
+
+    #biographyStudyingCardsBlock {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    #biographyStudyingHeaderCardsBlock {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    #biographyStudyingHeaderCard {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    #biographyStudyingHeaderImageCard {
+        grid-column: span 1;
+        grid-row: span 1; 
+    }
+    #biographyStudyingTextCard {
+        grid-column: span 2;
+        grid-row: span 1; 
+    }
+
+    /* Working */
+
+    #biographyWorkingCardsBlock {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    #biographyWorkingImageCard {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    #biographyWorkingTextCard {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    /* Coding image */
+
+    #biographyCodingImageBlock {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+@media screen and (min-width: 750px) and (max-width: 1199px) {
+    .biographyGridBlock {
+        grid-auto-rows: 300px;
+    }
+    .relatedCards {
+        grid-auto-rows: 300px;
+    }
+
+    /* Introduction */
+
+    #biographyIntroductionCardsBlock {
+        grid-column: span 4;
+        grid-row: span 2;
+    }
+    #biographyIntroductionImageCard {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    #biographyIntroductionHeaderCard {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    /* Early years */
+
+    #biographyEarlyYearsCardsBlock {
+        grid-column: span 4;
+        grid-row: span 2;
+    }
+    #biographyEarlyYearsImageCard {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    #biographyEarlyYearsTextCard {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    /* Studying */
+
+    #biographyStudyingCardsBlock {
+        grid-column: span 4;
+        grid-row: span 2;
+    }
+    #biographyStudyingHeaderCardsBlock {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    #biographyStudyingHeaderCard {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+    #biographyStudyingHeaderImageCard {
+        grid-column: span 1;
+        grid-row: span 1; 
+    }
+    #biographyStudyingTextCard {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    /* Working */
+
+    #biographyWorkingCardsBlock {
+        grid-column: span 4;
+        grid-row: span 2; 
+    }
+    #biographyWorkingImageCard {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    #biographyWorkingTextCard {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    /* Coding image */
+
+    #biographyCodingImageBlock {
+        grid-column: span 4;
+        grid-row: span 1;
+    }
+}
+@media screen and (min-width: 0px) and (max-width: 750px) {
+    .biographyGridBlock {
+        grid-auto-rows: 200px;
+    }
+    .relatedCards {
+        grid-auto-rows: 200px;
+    }
+
+    /* Introduction */
+
+    #biographyIntroductionCardsBlock {
+        grid-column: span 4;
+        grid-row: span 2;
+    }
+    #biographyIntroductionImageCard {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    #biographyIntroductionHeaderCard {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    /* Early years */
+
+    #biographyEarlyYearsCardsBlock {
+        grid-column: span 4;
+        grid-row: span 3;
+    }
+    #biographyEarlyYearsImageCard {
+        grid-column: span 4;
+        grid-row: span 1;
+    }
+    #biographyEarlyYearsTextCard {
+        grid-column: span 4;
+        grid-row: span 2;
+    }
+
+    /* Studying */
+
+    #biographyStudyingCardsBlock {
+        grid-column: span 4;
+        grid-row: span 5;
+    }
+    #biographyStudyingHeaderCardsBlock {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+    #biographyStudyingHeaderCard {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    #biographyStudyingHeaderImageCard {
+        grid-column: span 2;
+        grid-row: span 1; 
+    }
+    #biographyStudyingTextCard {
+        grid-column: span 2;
+        grid-row: span 3; 
+    }
+
+    /* Working */
+
+    #biographyWorkingCardsBlock {
+        grid-column: span 4;
+        grid-row: span 4; 
+    }
+    #biographyWorkingImageCard {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+    #biographyWorkingTextCard {
+        grid-column: span 2;
+        grid-row: span 3;
+    }
+
+    /* Coding image */
+
+    #biographyCodingImageBlock {
+        grid-column: span 4;
+        grid-row: span 1;
+    }
+}
+
+/* Biography - images cards */
+
+.imageBlock {
+    overflow: hidden;
+
+    width: 100%;
+    height: 100%;
+}
+.imageBlock .image {
+    width: 100%;
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    transition: 1s ease;
+}
+
+/* Biography - text cards */
+
+.textBlockContainer {
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+
+    transition: ease 1s;
+}
+.textBlock {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+}
+
+/* Biography - cards customization */
+
+.biographyGridBlock .textBlock {
+    position: relative;
+}
+.biographyGridBlock .textBlock .header {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.biographyGridBlock .textBlock .header h1 {
+    font-size: 20pt;
+    font-family: "Oswald";
+    margin-bottom: 2%;
+}
+.biographyGridBlock .textBlock .header p {
+    font-size: 20pt;
+}
+.biographyGridBlock .textBlock .common {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    text-align: justify;
+
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.biographyGridBlock .textBlock .common h1 {
+    font-size: 25pt;
+    font-family: "Oswald";
+    margin-bottom: 2%;
+}
+.biographyGridBlock .textBlock .common p {
+    font-size: 11pt;
+}
+
+#biographyIntroductionHeaderCard {
+    background-color: rgb(166, 180, 57);
+}
+#biographyIntroductionHeaderCard .text p {
+    color: white;
+}
+
+#biographyStudyingHeaderCard {
+    background-color: rgb(255, 95, 66);
+}
+#biographyStudyingHeaderCard .text p {
+    color: white;
+}
+
+#biographyStudyingTextCard {
+    background-color: rgb(118, 205, 216);
+}
+
+#biographyWorkingTextCard {
+    background-color: rgb(255, 192, 0);
+}
+
+
+
+/* Stack */
+
+.technologyStackBlock {
+    display: flex;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.technologyStackHeader h1 {
+    font-family: "Oswald";
+    font-size: 25pt;
+    font-weight: normal;
+}
+.technologyStackGrid {
+    display: grid;
+}
+.technologyCell {
+    width: 100%;
+    height: 100%;
+
+    grid-column: span 1;
+    grid-row: span 1;
+
+    position: relative;
+}
+.technologyCellContent {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.technologyCellContent:hover {
+    text-decoration: underline;
+}
+.technologyImage {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 100px;
+    width: 100px;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10%;
+}
+.technologyDesc {
+    text-align: center;
+    font-family: "Inconsolata";
+    font-size: 12pt;
+}
+
+/* Stack - adapting */
+
+@media screen and (min-width: 1200px) {
+    .technologyStackBlock {
+        width: 1160px;
+
+        flex-direction: row;
+    }
+    .technologyStackHeader {
+        margin-top: auto;
+        margin-bottom: auto;
+
+        min-width: 300px;
+        max-width: 300px;
+    }
+    .technologyStackHeader h1 {
+        margin-bottom: 5%;
+    }
+    .technologyStackHeader p {
+        text-align: justify;
+    }
+    .technologyStackGrid {
+        grid-template-columns: repeat(4, 200px);
+        grid-auto-rows: 200px;
+        grid-gap: 20px;
+    }
+}
+@media screen and (min-width: 750px) and (max-width: 1200px) {
+    .technologyStackBlock {
+        width: 750px;
+
+        flex-direction: column;
+        align-items: center;
+    }
+    .technologyStackHeader {
+        width: 100%;
+        
+        text-align: center;
+    }
+    .technologyStackHeader h1 {
+        margin-bottom: 2%;
+    }
+    .technologyStackHeader p {
+        margin-bottom: 2%;
+    }
+    .technologyStackGrid {
+        grid-template-columns: repeat(3, 200px);
+        grid-auto-rows: 200px;
+        grid-gap: 20px;
+    } 
+}
+@media screen and (min-width: 0px) and (max-width: 749px) {
+    .technologyStackBlock {
+        width: 350px;
+
+        flex-direction: column;
+        align-items: center;
+    }
+    .technologyStackHeader {
+        width: 100%;
+        
+        text-align: center;
+    }
+    .technologyStackHeader h1 {
+        margin-bottom: 5%;
+    }
+    .technologyStackHeader p {
+        margin-bottom: 5%;
+    }
+    .technologyStackGrid {
+        grid-template-columns: repeat(2, 150px);
+        grid-auto-rows: 150px;
+        grid-gap: 20px;
+    }
+    .technologyImage {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+
+/* Contacts */
+
+
+
+.contactsBlock {
+    display: flex;
+    flex-direction: column;
+
+    width: 80%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.contactsHeader {
+    text-align: center;
+
+    margin-bottom: 5%;
+}
+.contactsHeader h1 {
+    font-family: "Oswald";
+    font-size: 25pt;
+    font-weight: normal;
+}
+.contactsRow {
     display: flex;
     justify-content: space-between;
-    margin-top: 5vh;
-    padding-left: 5vw;
-    padding-right: 5vw;
 }
-.contactsContainer .contactContainer {
-    width: 128px;
+.contactImage {
+    margin-left: auto;
+    margin-right: auto;
+
+    width: 14vw;
+    height: 14vw;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin-bottom: 10%;
+}
+.contactDesc {
+    text-align: center;
+}
+
+
+
+/* Message form */
+
+
+
+.messageFormBlock {
+    display: flex;
+    flex-direction: column;
+
+    width: 80%;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.messageFormHeader {
+    text-align: center;
+
+    margin-bottom: 5%;
+}
+.messageFormHeader h1 {
+    font-family: "Oswald";
+    font-size: 25pt;
+    font-weight: normal;
+}
+.messageFormGrid {
+    display: grid;
+    grid-template-columns: repeat(2, calc(50% - 10px));
+
+    background-color: rgb(247, 247, 247);
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 5%;
+}
+.gridContainer {
+    display: grid;
+    grid-template-columns: 100%;
+}
+.gridBlock {
+    grid-column: span 1;
+    
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.wideBlock {
+    grid-column: span 2;
+}
+.longBlock {
+    grid-row: span 3;
+}
+#messageTextAreaBlockContainer {
+    grid-row: span 2;
+}
+#messageTextArea {
+    grid-row: span 3;
+}
+.messageFormBlock label,
+.messageFormBlock select,
+.messageFormBlock input,
+.messageFormBlock textarea {
+    width: 100%;
     height: 100%;
-    display: inline-block;
+
+    font-family: "Comfortaa";
 }
-.contactsContainer .contactContainer .imageContainer {
-    width: 128px;
-    height: 128px;
-    text-align: center;
+.messageFormBlock select,
+.messageFormBlock input,
+.messageFormBlock textarea{
+    padding-left: 10px;
+    padding-right: 10px;
 }
-.contactsContainer .contactContainer .textContainer {
-    width: 100%;
-    height: 32px;
-    text-align: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-.messagesArea {
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    text-align: left;
-}
-.messagesAreaBlock {
-    margin-top: 1vh;
-    margin-bottom: 1vh;
-}
-.messagesAreaBlock label {
-    display: block;
-}
-.messagesAreaBlock input {
-    width: 50%;
-    box-sizing: border-box;
-}
-.messagesAreaBlock select {
-    width: 50%;
-}
-.messagesArea textarea {
+.messageFormBlock textarea {
     resize: none;
-    width: 100%;
-    height: 30vh;
-    margin: auto;
-    border-radius: 4px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
-.messagesAreaSendButton {
-    margin-top: 1vh;
-    text-align: center;
+.messageFormButton {
+    margin-top: 2%;
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+}
+.messageFormButton button {
+    cursor: pointer;
+
+    color: white;
+    letter-spacing: 2px;
+    font-weight: bolder;
+
+    border: none;
+    border-radius: 10px;
+
+    background-color: rgb(118, 205, 216);
+}
+
+/* Message form - adapting */
+
+@media screen and (min-width: 1200px) {
+    .messageFormGrid {
+        width: 60%;
+        grid-auto-rows: 100px;
+        grid-gap: 20px;
+    }
+    .gridContainer {
+        grid-auto-rows: 50px;
+    }
+    .messageFormBlock label,
+    .messageFormBlock select,
+    .messageFormBlock input {
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .messageFormButton {
+        width: 60%;
+    }
+    .messageFormButton button {
+        width: 200px;
+        height: 50px;
+    }
+}
+@media screen and (min-width: 750px) and (max-width: 1200px) {
+    .messageFormGrid {
+        width: 80%;
+        grid-auto-rows: 80px;
+        grid-gap: 20px;
+    }
+    .gridContainer {
+        grid-auto-rows: 50px;
+    }
+    .messageFormBlock label,
+    .messageFormBlock select,
+    .messageFormBlock input {
+        height: 40px;
+        line-height: 40px;
+    }
+
+    .messageFormButton {
+        width: 80%;
+    }
+    .messageFormButton button {
+        width: 160px;
+        height: 40px;
+    }
+}
+@media screen and (min-width: 0px) and (max-width: 749px) {
+    .messageFormGrid {
+        width: 90%;
+        grid-auto-rows: 50px;
+        grid-gap: 20px;
+
+        font-size: 10pt;
+    }
+    .gridContainer {
+        grid-auto-rows: 25px;
+    }
+    .messageFormBlock label,
+    .messageFormBlock select,
+    .messageFormBlock input {
+        height: 25px;
+        line-height: 25px;
+    }
+
+    .messageFormButton {
+        width: 90%;
+    }
+    .messageFormButton button {
+        width: 120px;
+        height: 30px;
+    }
 }

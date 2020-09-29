@@ -6,8 +6,13 @@ import javax.persistence.*;
 @Table(name = "messages")
 public class Message {
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
+
+    @Column(name = "message_subject", nullable = false)
+    @Enumerated(value = EnumType.ORDINAL)
+    private MessageSubject messageSubject;
 
     @Column(name = "messenger_name", nullable = false, length = 31)
     private String messengerName;
@@ -18,18 +23,14 @@ public class Message {
     @Column(name = "messenger_email", nullable = false, length = 63)
     private String messengerEmail;
 
-    @Column(name = "message_header", nullable = false, length = 63)
-    private String messageHeader;
-
-    @Column(name = "message_subject", nullable = false)
-    @Enumerated(value = EnumType.ORDINAL)
-    private MessageSubject messageSubject;
+    @Column(name = "messenger_company", nullable = false, length = 63)
+    private String messengerCompany;
 
     @Column(name = "message_text", length = 4095, nullable = false)
     private String messageText;
 
     @Column(name = "isViewed", nullable = false)
-    private Boolean isViewed;
+    private boolean isViewed;
 
     public Message() {
     }
@@ -40,6 +41,14 @@ public class Message {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public MessageSubject getMessageSubject() {
+        return messageSubject;
+    }
+
+    public void setMessage_subject(MessageSubject messageSubject) {
+        this.messageSubject = messageSubject;
     }
 
     public String getMessengerName() {
@@ -66,20 +75,12 @@ public class Message {
         this.messengerEmail = messengerEmail;
     }
 
-    public String getMessageHeader() {
-        return messageHeader;
+    public String getMessengerCompany() {
+        return messengerCompany;
     }
 
-    public void setMessageHeader(String messageHeader) {
-        this.messageHeader = messageHeader;
-    }
-
-    public MessageSubject getMessageSubject() {
-        return messageSubject;
-    }
-
-    public void setMessage_subject(MessageSubject messageSubject) {
-        this.messageSubject = messageSubject;
+    public void setMessengerCompany(String messengerCompany) {
+        this.messengerCompany = messengerCompany;
     }
 
     public String getMessageText() {
